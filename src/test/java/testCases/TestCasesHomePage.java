@@ -17,7 +17,7 @@ import pageObjects.HomePage;
 import testBases.BaseClass;
 
 public class TestCasesHomePage extends BaseClass{
-	
+	HomePage hp;
 	@Test
 	public void testCase01() {
 	/*1) Open the browser
@@ -28,15 +28,36 @@ public class TestCasesHomePage extends BaseClass{
 	6) The Home page must contains only three sliders
 	}*/
 		try {
-			HomePage hp = new HomePage(driver);
+			new HomePage(driver);
 			hp.clickOnShopMenu();
 			hp.clickOnHomeMenu();
 			int slider = hp.getSliderCount();
 			Assert.assertEquals(slider, 3, "Total count 3 is match");
 		}catch(Exception e) {
+			
 			System.out.println(e.getMessage());
 		}
 	
 	
 	}
+	/*
+	1) Open the browser
+	2) Enter the URL “http://practice.automationtesting.in/”
+	3) Click on Shop Menu
+	4) Now click on Home menu button
+	5) Test whether the Home page has Three Arrivals only
+	6) The Home page must contains only three Arrivals
+	*/
+	@Test
+	public void testCase02() {
+		boolean status = false;
+		try{
+			new HomePage(driver);
+			status = hp.getBannerCount();
+			Assert.assertTrue(status, "The homepage contains 3 arrivals only");	
+		}catch(Exception e ) {
+			Assert.assertFalse(status);
+		}
+	}
+	
 }
