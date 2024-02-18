@@ -4,7 +4,6 @@
 	<listeners>
 		<listener class-name = "utilities.ExtentReportManager"></listener>
 	</listeners>
-	
 	<test name="Functional Home Page">
 		<classes>
 			<class name = "testCases.TestCasesHomePage"/>

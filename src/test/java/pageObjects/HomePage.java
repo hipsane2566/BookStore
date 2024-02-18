@@ -28,11 +28,11 @@ public class HomePage extends BasePage{
 	private static @FindBy(xpath = "//div[@class='n2-ss-slider-3']/following::div[2]")
 	WebElement rightArrow;
 	
-	@FindBy(how = How.TAG_NAME, using = "h2")
+	private static @FindBy(how = How.TAG_NAME, using = "h2")
 	WebElement arrivalText;
 	
-	@FindBy(how = How.XPATH, using = "//h2[.='new arrivals']/following::div[2]/div")
-	Set <WebElement> bannerThreeArrivals;
+	private static @FindBy(how = How.XPATH, using = "//h2[.='new arrivals']/following::div[2]/div")
+	List <WebElement> bannerThreeArrivals;
 	
 	//click on shop menu option
 	public void clickOnShopMenu() {

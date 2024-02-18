@@ -6,8 +6,8 @@
       <class name="testCases.TestCasesHomePage">
         <methods>
           <include name="tearDown"/>
+          <include name="testCase02"/>
           <include name="intitializeBrowser"/>
-          <include name="testCase01"/>
         </methods>
       </class> <!-- testCases.TestCasesHomePage -->
     </classes>
