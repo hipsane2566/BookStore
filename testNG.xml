@@ -11,6 +11,8 @@
 					<include name = "testCase01"/>
 					<include name = "testCase02"/>
 					<include name = "testCase03"/>
+					<include name = "testCase04"/>
+					
 					
 				</methods>
 			</class>

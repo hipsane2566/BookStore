@@ -47,6 +47,22 @@ public class HomePage extends BasePage{
 	private static @FindBy(tagName = "h1" )
 	WebElement textProductPage;
 	
+	//add to basket button
+	private static @FindBy(tagName = "button")
+	WebElement btnAddToBasket;
+	
+	//product price
+	private static @FindBy(xpath = "//p[@class='price']/span[1]")
+	WebElement productPrice;
+	
+	//item count
+	private static @FindBy(className = "cartcontents")
+	WebElement itemCount;
+	
+	//item price
+	private static @FindBy(className = "amount")
+	WebElement itemPrice;
+	
 	//click on shop menu option
 	public void clickOnShopMenu() {
 		shopLink.click();
@@ -111,7 +127,50 @@ public class HomePage extends BasePage{
 		return imageArrival.getText();
 	}
 	
+	//getProdcut text
 	public String getProductText() {
 		return textProductPage.getText();
+	}
+	
+	//getProduct pricing
+	public static int getProductPrice() {
+		return stringToInt(productPrice.getText());
+	}
+	
+	//get menu items count and price
+	public static int [] checkMenuItemDetails() {
+		String [] items = itemCount.getText().split(" ");
+		int count = Integer.parseInt(items[0]);
+		int price = stringToInt(itemPrice.getText());
+		int itemDetails [] = {count, price};
+		return itemDetails;
+	}
+	
+	public boolean getMenuItemWithPrice() {
+		boolean status = false;
+		try {
+			int productPrice = getProductPrice();
+			int beforeAddtoCart [] = checkMenuItemDetails();
+			btnAddToBasket.click();
+			int afterAddToCart [] = checkMenuItemDetails();
+			for(int i = 0; i<1; i++) {
+				if(beforeAddtoCart[i]<afterAddToCart[i]) {
+					if(productPrice==afterAddToCart[i+1]) {
+						status = true;
+					}
+				}
+			}return status;	
+		}catch(NoSuchElementException e) {
+			System.out.println(e.getMessage());
+			return status;
+		}
+	}
+	
+	public static int stringToInt(String text) {
+		String splitText []=text.split("\\₹");
+		double convert = Double.parseDouble(splitText[1]);
+		System.out.println(convert);
+		int integer = (int) convert;
+		return integer;
 	}
 }

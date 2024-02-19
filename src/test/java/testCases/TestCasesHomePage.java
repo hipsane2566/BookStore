@@ -12,7 +12,7 @@ public class TestCasesHomePage extends BaseClass{
 	HomePage hp;
 	ITestResult result;
 	
-	@Test(priority =0,groups = {"functional"},description ="Verified Home page slider are displayed")
+	@Test(priority =0,groups = {"functional"},description ="Verify that if Home page slider are displayed")
 	public void testCase01() {
 	/*1) Open the browser
 	2) Enter the URL “http://practice.automationtesting.in/”
@@ -39,7 +39,7 @@ public class TestCasesHomePage extends BaseClass{
 		}
 	}
 	
-	@Test(priority =1,groups = {"functional"})
+	@Test(priority =1,groups = {"functional"}, description = "Verify that if homepage contains only three arrivals")
 	/*
 	1) Open the browser
 	2) Enter the URL “http://practice.automationtesting.in/”
@@ -78,7 +78,7 @@ public class TestCasesHomePage extends BaseClass{
 	8) Test whether it is navigating to next page where the user can add that book into his basket.
 	9) Image should be clickable and should navigate to next page where user can add that book to his basket
 	*/
-	@Test(priority = 2, dependsOnMethods = {"testCase02"}, groups={"functional"}, description = "Image should be clickable and shoul navigate to next page where user can add that book to his basket")
+	@Test(priority = 2, dependsOnMethods = {"testCase02"}, groups={"functional"}, description = "Verify that if clicking on product image redirect to product page")
 	public void testCase03() { 
 		try {
 			addLog("*****Test case 03 execution is started successfully*****");
@@ -95,5 +95,21 @@ public class TestCasesHomePage extends BaseClass{
 			Assert.fail();
 		}
 		
+	}
+	
+	/*
+	 *	10) Click on the Add To Basket button which adds that book to your basket
+	 *	11) User can view that Book in the Menu item with price.
+	 *	12) User can add a book by clicking on Add To Basket button which adds that book in to his Basket
+	 */
+	@Test(priority = 2 , dependsOnMethods = {"testCase03"}, description = "Verify that if menu item with price is added")
+	public void testCase04() {
+		boolean status = false;
+		try {
+			status = hp.getMenuItemWithPrice();
+			Assert.assertTrue(status, "Test is Passed");
+		}catch(Exception e) {
+			Assert.assertFalse(status, "Test is Failed");
+		}
 	}
 }

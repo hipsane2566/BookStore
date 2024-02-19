@@ -12,6 +12,7 @@
           <include name="testCase03"/>
           <include name="testCase02"/>
           <include name="logger"/>
+          <include name="testCase04"/>
           <include name="intitializeBrowser"/>
         </methods>
       </class> <!-- testCases.TestCasesHomePage -->

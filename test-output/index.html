@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -114,6 +114,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Functional_Test_" title="testCases.TestCasesHomePage" class="method navigator-link" hash-for-method="testCase03">testCase03</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Functional_Test_" title="testCases.TestCasesHomePage" class="method navigator-link" hash-for-method="testCase04">testCase04</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Functional_Test_ -->
@@ -140,7 +145,7 @@
                   </a> <!-- testCase01 -->
                   <span class="method-name">testCase01</span>
                   <em>
-(Verified Home page slider are displayed)                  </em>
+(Verify that if Home page slider are displayed)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -148,6 +153,8 @@
                   <a name="testCase02">
                   </a> <!-- testCase02 -->
                   <span class="method-name">testCase02</span>
+                  <em>
+(Verify that if homepage contains only three arrivals)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -156,7 +163,16 @@
                   </a> <!-- testCase03 -->
                   <span class="method-name">testCase03</span>
                   <em>
-(Image should be clickable and shoul navigate to next page where user can add that book to his basket)                  </em>
+(Verify that if clicking on product image redirect to product page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCase04">
+                  </a> <!-- testCase04 -->
+                  <span class="method-name">testCase04</span>
+                  <em>
+(Verify that if menu item with price is added)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -181,6 +197,7 @@
           &lt;include name=&quot;testCase01&quot;/&gt;
           &lt;include name=&quot;testCase02&quot;/&gt;
           &lt;include name=&quot;testCase03&quot;/&gt;
+          &lt;include name=&quot;testCase04&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- testCases.TestCasesHomePage --&gt;
     &lt;/classes&gt;
@@ -238,24 +255,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testCase01')
+data.setCell(0, 1, 'testCase04')
 data.setCell(0, 2, 'testCases.TestCasesHomePage')
-data.setCell(0, 3, 12021);
+data.setCell(0, 3, 13862);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCase02')
+data.setCell(1, 1, 'testCase01')
 data.setCell(1, 2, 'testCases.TestCasesHomePage')
-data.setCell(1, 3, 2121);
+data.setCell(1, 3, 13831);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testCase03')
+data.setCell(2, 1, 'testCase02')
 data.setCell(2, 2, 'testCases.TestCasesHomePage')
-data.setCell(2, 3, 1132);
+data.setCell(2, 3, 7626);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCase03')
+data.setCell(3, 2, 'testCases.TestCasesHomePage')
+data.setCell(3, 3, 2317);
 window.suiteTableData['Functional_Test_']= { tableData: data, tableDiv: 'times-div-Functional_Test_'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 37 seconds</span>
               <div id="times-div-Functional_Test_">
               </div> <!-- times-div-Functional_Test_ -->
             </div> <!-- times-div -->
@@ -288,23 +309,27 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">intitializeBrowser</span>
-                <span class="method-start">350 ms</span>
+                <span class="method-start">343 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCase01</span>
-                <span class="method-start">5933 ms</span>
+                <span class="method-start">18050 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCase02</span>
-                <span class="method-start">17970 ms</span>
+                <span class="method-start">31896 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCase03</span>
-                <span class="method-start">20093 ms</span>
+                <span class="method-start">39522 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCase04</span>
+                <span class="method-start">41839 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">21225 ms</span>
+                <span class="method-start">55704 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
