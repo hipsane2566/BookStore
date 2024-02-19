@@ -1,22 +1,28 @@
 package testBases;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import utilities.ExtentReportManager;
+import com.aventstack.extentreports.Status;
+
+import utilities.ReportTestManager;
 
 public class BaseClass {
 	public static WebDriver driver;
@@ -72,7 +78,7 @@ public class BaseClass {
      * @return The Logger for the calling class.
      * @throws UnsupportedOperationException if the calling class cannot be determined.
      */
-	@BeforeTest
+	@BeforeTest(groups= {"functional"})
 	public Logger logger() {
 		log = LogManager.getLogger(this.getClass());
 		return log;
@@ -80,27 +86,34 @@ public class BaseClass {
 	
 	
 	//extent report logger
-	 /**
-     * Returns a ExtentTest using the fully qualified name of the Class as the Logger name.
-     *
-     * @param ITestResult object reference to get The test class used this object is a result for. 
-     * @return The ExtentTest .
-     * @throws UnsupportedOperationException if {@code clazz} is {@code null} and the calling class cannot be
-     *             determined.
-     */
-	@BeforeMethod
-	public ExtentTest getLog(ITestResult result) {
-		extent = ExtentReportManager.getReports();
-		test = extent.createTest(result.getTestClass().getName());
-		return test;
+	public void addLog(String message) {
+		ReportTestManager.getTest().log(Status.PASS, message);
 	}
 	public static WebDriver getDriver() {
 		return driver;
 	}
 
+	public String captureScreen(String tname) throws IOException {
+
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+				
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile=new File(targetFilePath);
+		
+		sourceFile.renameTo(targetFile);
+			
+		return targetFilePath;
+
+	}
+	
 	@AfterClass(groups= {"functional"})
 	public void tearDown() {
 		driver.quit();
 	}
+	
+	
 	
 }
