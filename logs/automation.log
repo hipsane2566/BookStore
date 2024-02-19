@@ -1,0 +1,21 @@
+21:53:27.662 [main] INFO  testCases.TestCasesHomePage - *****Test case 01 execution is started successfully*****
+21:53:28.661 [main] INFO  testCases.TestCasesHomePage - *****Click on Shop menu*****
+21:53:29.656 [main] INFO  testCases.TestCasesHomePage - *****Click on Home menu*****
+21:53:38.846 [main] INFO  testCases.TestCasesHomePage - *****Slider count is match as expected*****
+21:53:38.862 [main] INFO  testCases.TestCasesHomePage - *****Test case 01 execution is completed successfully*****
+21:53:38.883 [main] INFO  testCases.TestCasesHomePage - *****Test case 02 is execution is started successfully*****
+21:53:39.903 [main] INFO  testCases.TestCasesHomePage - *****Click on Shop menu*****
+21:53:40.877 [main] INFO  testCases.TestCasesHomePage - *****Click on Home menu*****
+21:53:40.907 [main] INFO  testCases.TestCasesHomePage - *****Verified that 3 new arrivals are displayed*****
+21:53:40.907 [main] INFO  testCases.TestCasesHomePage - *****Test case 02 execution is completed successfully*****
+00:08:24.278 [main] INFO  testCases.TestCasesHomePage - *****Test case 01 execution is started successfully*****
+00:08:25.562 [main] INFO  testCases.TestCasesHomePage - *****Click on Shop menu*****
+00:08:26.572 [main] INFO  testCases.TestCasesHomePage - *****Click on Home menu*****
+00:08:35.883 [main] INFO  testCases.TestCasesHomePage - *****Slider count is match as expected*****
+00:08:35.885 [main] INFO  testCases.TestCasesHomePage - *****Test case 01 execution is completed successfully*****
+00:08:35.900 [main] INFO  testCases.TestCasesHomePage - *****Test case 02 is execution is started successfully*****
+00:08:37.005 [main] INFO  testCases.TestCasesHomePage - *****Click on Shop menu*****
+00:08:38.170 [main] INFO  testCases.TestCasesHomePage - *****Click on Home menu*****
+00:08:38.239 [main] INFO  testCases.TestCasesHomePage - *****Verified that 3 new arrivals are displayed*****
+00:08:38.239 [main] INFO  testCases.TestCasesHomePage - *****Test case 02 execution is completed successfully*****
+00:12:22.249 [main] INFO  testCases.TestCasesHomePage - *****Test case 01 execution is started successfully*****
